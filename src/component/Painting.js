@@ -184,6 +184,22 @@ function Painting() {
               </td>
             </tr>
           </table>
+
+          <Typography sx={{ fontSize: "18px", mt: 2 }}>
+            <strong>Key Concepts</strong>
+          </Typography>
+          <Typography variant="p" sx={{ fontSize: "14px", mt: 2 }}>
+            <strong> Hazard-</strong> Something in the work environment that has
+            the potential to cause harm to a person (injury, illness or death).
+          </Typography>
+          <Typography variant="p" sx={{ fontSize: "14px", mt: 2 }}>
+            <strong> Risk -</strong> The chance (or likelihood) that a hazard
+            will cause that harm..
+          </Typography>
+          <Typography variant="p" sx={{ fontSize: "14px", mt: 2 }}>
+            <strong> Control Measure</strong> - A thing, work process or system
+            of work that controls the OHS hazard or risk
+          </Typography>
         </Grid>
       </Box>
     </form>
