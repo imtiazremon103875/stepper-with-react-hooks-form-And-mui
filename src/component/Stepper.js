@@ -6,6 +6,16 @@ import StepButton from "@mui/material/StepButton";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Painting from "./Painting";
+import SafeWork from "./SafeWork";
+import Planning from "./Planning";
+import Equipment from "./Equipment";
+import WorkArea from "./WorkArea";
+import Surface from "./Surface";
+import Noice from "./Noice";
+import ELcetrical from "./ELcetrical";
+import Environment from "../Environment";
+import Hazardous from "./Hazardous";
+import Completion from "./Completion";
 
 const steps = [
   "Painting",
@@ -24,6 +34,35 @@ const steps = [
 export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return <Painting></Painting>;
+      case 1:
+        return <SafeWork></SafeWork>;
+      case 2:
+        return <Planning></Planning>;
+      case 3:
+        return <Equipment></Equipment>;
+      case 4:
+        return <WorkArea></WorkArea>;
+      case 5:
+        return <Surface></Surface>;
+      case 6:
+        return <Noice></Noice>;
+      case 7:
+        return <ELcetrical></ELcetrical>;
+      case 8:
+        return <Environment></Environment>;
+      case 9:
+        return <Hazardous></Hazardous>;
+      case 10:
+        return <Completion></Completion>;
+      default:
+        return "unknown stage";
+    }
+  }
 
   const totalSteps = () => {
     return steps.length;
@@ -98,8 +137,8 @@ export default function HorizontalNonLinearStepper() {
         ) : (
           <React.Fragment>
             <Typography sx={{ mt: 2, mb: 1, py: 1 }}>
-              Step {activeStep + 1}
-              <Painting></Painting>
+              {/* Step {activeStep + 1} */}
+              {getStepContent(activeStep)}
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
               <Button
