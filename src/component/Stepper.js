@@ -17,19 +17,7 @@ import Environment from "../Environment";
 import Hazardous from "./Hazardous";
 import Completion from "./Completion";
 
-const steps = [
-  "Painting",
-  "SAFE WORK",
-  "Planning",
-  "Equipment",
-  "Work Area",
-  "Surface",
-  "Noise",
-  "Electrical",
-  "Environment",
-  "Hazardous Goods",
-  "Completion",
-];
+const steps = ["", "", "", "", "", "", "", "", "", "", ""];
 
 export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -111,10 +99,10 @@ export default function HorizontalNonLinearStepper() {
   };
 
   return (
-    <Box sx={{ width: "100%", mt: 10 }} mx="auto">
+    <Box sx={{ width: "50%", mt: 10 }} mx="auto">
       <Stepper nonLinear activeStep={activeStep}>
         {steps.map((label, index) => (
-          <Step key={label} completed={completed[index]}>
+          <Step key={index} completed={completed[index]}>
             <StepButton color="inherit" onClick={handleStep(index)}>
               {label}
             </StepButton>
@@ -136,10 +124,10 @@ export default function HorizontalNonLinearStepper() {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1, py: 1 }}>
-              {/* Step {activeStep + 1} */}
-              {getStepContent(activeStep)}
-            </Typography>
+            {/* <Typography sx={{ mt: 2, mb: 1, py: 1 }}> */}
+            {/* Step {activeStep + 1} */}
+            {getStepContent(activeStep)}
+            {/* </Typography> */}
             <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
               <Button
                 variant="contained"
