@@ -16,6 +16,7 @@ import ELcetrical from "./ELcetrical";
 import Environment from "../Environment";
 import Hazardous from "./Hazardous";
 import Completion from "./Completion";
+import { useForm } from "react-hook-form";
 
 const steps = ["", "", "", "", "", "", "", "", "", "", ""];
 
@@ -23,18 +24,18 @@ export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
 
-  function getStepContent(step) {
+  function getStepContent(step, register, watch, activeStep) {
     switch (step) {
       case 0:
-        return <Painting></Painting>;
+        return <Painting register={register}></Painting>;
       case 1:
-        return <SafeWork></SafeWork>;
+        return <SafeWork register={register} watch={watch}></SafeWork>;
       case 2:
-        return <Planning></Planning>;
+        return <Planning register={register} watch={watch}></Planning>;
       case 3:
-        return <Equipment></Equipment>;
+        return <Equipment register={register} watch={watch}></Equipment>;
       case 4:
-        return <WorkArea></WorkArea>;
+        return <WorkArea register={register} watch={watch}></WorkArea>;
       case 5:
         return <Surface></Surface>;
       case 6:
@@ -44,9 +45,9 @@ export default function HorizontalNonLinearStepper() {
       case 8:
         return <Environment></Environment>;
       case 9:
-        return <Hazardous></Hazardous>;
+        return <Hazardous activeStep={activeStep}></Hazardous>;
       case 10:
-        return <Completion></Completion>;
+        return <Completion activeStep={activeStep}></Completion>;
       default:
         return "unknown stage";
     }
@@ -97,70 +98,86 @@ export default function HorizontalNonLinearStepper() {
     setActiveStep(0);
     setCompleted({});
   };
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <Box sx={{ width: "50%", mt: 10 }} mx="auto">
-      <Stepper nonLinear activeStep={activeStep}>
-        {steps.map((label, index) => (
-          <Step key={index} completed={completed[index]}>
-            <StepButton color="inherit" onClick={handleStep(index)}>
-              {label}
-            </StepButton>
-          </Step>
-        ))}
-      </Stepper>
-      <div>
-        {allStepsCompleted() ? (
-          <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button variant="contained" onClick={handleReset}>
-                Reset
-              </Button>
-            </Box>
-          </React.Fragment>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Stepper nonLinear activeStep={activeStep}>
+          {steps.map((label, index) => (
+            <Step key={index} completed={completed[index]}>
+              <StepButton color="inherit" onClick={handleStep(index)}>
+                {label}
+              </StepButton>
+            </Step>
+          ))}
+        </Stepper>
+        <div>
+          {allStepsCompleted() ? (
+            <React.Fragment>
+              <Typography sx={{ mt: 2, mb: 1 }}>
+                All steps completed - you&apos;re finished
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <Box sx={{ flex: "1 1 auto" }} />
+                <Button variant="contained" onClick={handleReset}>
+                  Reset
+                </Button>
+              </Box>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              {/* <Typography sx={{ mt: 2, mb: 1, py: 1 }}> */}
+              {/* Step {activeStep + 1} */}
+              {getStepContent(activeStep, register, watch, activeStep)}
+              {/* </Typography> */}
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <Button
+                  variant="contained"
+                  // color="inherit"
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  sx={{ mr: 1 }}
+                >
+                  Back
+                </Button>
+                <Box sx={{ flex: "1 1 auto" }} />
+                <Button variant="contained" onClick={handleNext} sx={{ mr: 1 }}>
+                  Next
+                </Button>
+                {activeStep !== steps.length &&
+                  (completed[activeStep] ? (
+                    <Typography
+                      variant="caption"
+                      sx={{ display: "inline-block" }}
+                    >
+                      Step {activeStep + 1} already completed
+                    </Typography>
+                  ) : (
+                    <Button variant="contained" onClick={handleComplete}>
+                      {completedSteps() === totalSteps() - 1
+                        ? "Finish"
+                        : "Complete Step"}
+                    </Button>
+                  ))}
+              </Box>
+            </React.Fragment>
+          )}
+        </div>
+        {activeStep == 10 ? (
+          <Button type="submit" variant="contained">
+            Finish
+          </Button>
         ) : (
-          <React.Fragment>
-            {/* <Typography sx={{ mt: 2, mb: 1, py: 1 }}> */}
-            {/* Step {activeStep + 1} */}
-            {getStepContent(activeStep)}
-            {/* </Typography> */}
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Button
-                variant="contained"
-                // color="inherit"
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                sx={{ mr: 1 }}
-              >
-                Back
-              </Button>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button variant="contained" onClick={handleNext} sx={{ mr: 1 }}>
-                Next
-              </Button>
-              {activeStep !== steps.length &&
-                (completed[activeStep] ? (
-                  <Typography
-                    variant="caption"
-                    sx={{ display: "inline-block" }}
-                  >
-                    Step {activeStep + 1} already completed
-                  </Typography>
-                ) : (
-                  <Button variant="contained" onClick={handleComplete}>
-                    {completedSteps() === totalSteps() - 1
-                      ? "Finish"
-                      : "Complete Step"}
-                  </Button>
-                ))}
-            </Box>
-          </React.Fragment>
+          ""
         )}
-      </div>
+      </form>
     </Box>
   );
 }
