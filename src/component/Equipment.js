@@ -19,7 +19,7 @@ import Button from "@mui/material/Button";
 function Equipment(props) {
   const { register, watch } = props;
 
-  const covid19 = watch("covid19");
+  const Environmental = watch("Environmental");
 
   const yes5 = watch("yes5");
   const yes6 = watch("yes6");
@@ -56,14 +56,14 @@ function Equipment(props) {
             name="radio-buttons-group"
           >
             <FormControlLabel
-              value="covid19"
-              name="covid19"
-              id="covid19"
-              {...register("covid19")}
+              value="Environmental"
+              name="Environmental"
+              id="Environmental"
+              {...register("Environmental")}
               control={<Radio />}
               label="Environmental - incidient/spills"
             />
-            {covid19 && (
+            {Environmental && (
               <Box>
                 <Typography
                   sx={{
