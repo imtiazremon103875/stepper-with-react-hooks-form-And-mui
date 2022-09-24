@@ -13,10 +13,11 @@ import WorkArea from "./WorkArea";
 import Surface from "./Surface";
 import Noice from "./Noice";
 import ELcetrical from "./ELcetrical";
-import Environment from "../Environment";
+
 import Hazardous from "./Hazardous";
 import Completion from "./Completion";
 import { useForm } from "react-hook-form";
+import Environment from "./Environment";
 
 const steps = ["", "", "", "", "", "", "", "", "", "", ""];
 
@@ -37,15 +38,15 @@ export default function HorizontalNonLinearStepper() {
       case 4:
         return <WorkArea register={register} watch={watch}></WorkArea>;
       case 5:
-        return <Surface></Surface>;
+        return <Surface register={register} watch={watch}></Surface>;
       case 6:
-        return <Noice></Noice>;
+        return <Noice register={register} watch={watch}></Noice>;
       case 7:
-        return <ELcetrical></ELcetrical>;
+        return <ELcetrical register={register} watch={watch}></ELcetrical>;
       case 8:
-        return <Environment></Environment>;
+        return <Environment register={register} watch={watch}></Environment>;
       case 9:
-        return <Hazardous activeStep={activeStep}></Hazardous>;
+        return <Hazardous register={register} watch={watch}></Hazardous>;
       case 10:
         return <Completion activeStep={activeStep}></Completion>;
       default:
@@ -104,7 +105,7 @@ export default function HorizontalNonLinearStepper() {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => console.log({ data });
 
   return (
     <Box sx={{ width: "50%", mt: 10 }} mx="auto">

@@ -100,21 +100,24 @@ function SafeWork(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes3"
+                      value={true}
                       name="yes3"
-                      id="yes"
+                      id="ye3"
                       {...register("yes3")}
                       control={<Radio />}
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes3"
+                      id="yes3"
+                      {...register("yes3")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes3 && (
+                {yes3 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ marginRight: "20px" }}>
                       Inherent Risk Rating - (Workers or others catching
@@ -229,7 +232,7 @@ function SafeWork(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes4"
+                      value={true}
                       name="yes4"
                       id="yes4"
                       {...register("yes4")}
@@ -237,16 +240,16 @@ function SafeWork(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes4"
+                      id="yes4"
+                      {...register("yes4")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes4 && (
+                {yes4 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ marginRight: "220px" }}>
                       Inherent Risk Rating - (Dermatitis)

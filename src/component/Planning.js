@@ -22,7 +22,8 @@ function Planning(props) {
   const Hazardous = watch("Hazardous");
   // const allValues = watch();
   // console.log({ allValues });
-  const yes1 = watch("yes12");
+  const yes1 = watch("yes1");
+  console.log(yes1);
 
   const alchohol = watch("alchohol");
 
@@ -93,7 +94,7 @@ function Planning(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes1"
+                      value={true}
                       name="yes1"
                       id="yes1"
                       {...register("yes1")}
@@ -101,13 +102,17 @@ function Planning(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes1"
+                      id="yes1"
+                      {...register("yes1")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes1 && (
+
+                {yes1 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ marginRight: "100px" }}>
                       Inherent Risk Rating{" "}

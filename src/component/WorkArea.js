@@ -1,5 +1,6 @@
 import {
   Box,
+  Checkbox,
   Divider,
   FormControl,
   FormControlLabel,
@@ -26,6 +27,9 @@ function WorkArea(props) {
   const Painting = watch("Painting");
   const surface = watch("surface");
   const Heights = watch("Heights");
+  const Ladder = watch("Ladder");
+  const Trestle = watch("Trestle");
+  const EWP = watch("EWP");
   const yes10 = watch("yes10");
   const yes11 = watch("yes11");
   const yes12 = watch("yes12");
@@ -36,6 +40,10 @@ function WorkArea(props) {
   const yes17 = watch("yes17");
   const yes18 = watch("yes18");
   const yes19 = watch("yes19");
+  const yes20 = watch("yes20");
+  const yes21 = watch("yes21");
+  const yes22 = watch("yes22");
+  const yes23 = watch("yes23");
 
   const bull = (
     <Box
@@ -48,7 +56,7 @@ function WorkArea(props) {
   return (
     <Card sx={{ width: "100%" }}>
       <CardContent>
-        <Typography sx={{ marginRight: "400px", mt: 3, mb: 6 }}>
+        <Typography sx={{ marginRight: "500px", mt: 3, mb: 6 }}>
           Task Name: Work Area Setup
         </Typography>
         <FormControl sx={{ marginRight: "550px", mt: 3 }}>
@@ -101,7 +109,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes10"
+                      value={true}
                       name="yes10"
                       id="yes10"
                       {...register("yes10")}
@@ -109,13 +117,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes10"
+                      id="yes10"
+                      {...register("yes10")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes10 && (
+                {yes10 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How will the hazards and risk be controlled?
@@ -178,7 +189,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes14"
+                      value={true}
                       name="yes14"
                       id="yes14"
                       {...register("yes14")}
@@ -186,13 +197,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes14"
+                      id="yes14"
+                      {...register("yes14")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes14 && (
+                {yes14 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -286,7 +300,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes11"
+                      value={true}
                       name="yes11"
                       id="yes11"
                       {...register("yes11")}
@@ -294,16 +308,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes11"
+                      id="yes11"
+                      {...register("yes11")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes11 && (
+                {yes11 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -396,7 +410,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes13"
+                      value={true}
                       name="yes13"
                       id="yes13"
                       {...register("yes13")}
@@ -404,13 +418,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes13"
+                      id="yes13"
+                      {...register("yes13")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes13 && (
+                {yes13 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How will the hazards and risks be controlled?
@@ -474,7 +491,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes12"
+                      value={true}
                       name="yes12"
                       id="yes12"
                       {...register("yes12")}
@@ -482,13 +499,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes12"
+                      id="yes12"
+                      {...register("yes12")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes12 && (
+                {yes12 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -547,7 +567,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes15"
+                      value={true}
                       name="yes15"
                       id="yes15"
                       {...register("yes15")}
@@ -555,13 +575,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes15"
+                      id="yes15"
+                      {...register("yes15")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes15 && (
+                {yes15 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -654,7 +677,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes16"
+                      value={true}
                       name="yes16"
                       id="yes16"
                       {...register("yes16")}
@@ -662,16 +685,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes16"
+                      id="yes16"
+                      {...register("yes16")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes16 && (
+                {yes16 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -768,7 +791,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes17"
+                      value={true}
                       name="yes17"
                       id="yes17"
                       {...register("yes17")}
@@ -776,16 +799,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes17"
+                      id="yes17"
+                      {...register("yes17")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes17 && (
+                {yes17 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -882,7 +905,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes18"
+                      value={true}
                       name="yes18"
                       id="yes18"
                       {...register("yes18")}
@@ -890,16 +913,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes18"
+                      id="yes18"
+                      {...register("yes18")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes18 && (
+                {yes18 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -995,7 +1018,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes19"
+                      value={true}
                       name="yes19"
                       id="yes19"
                       {...register("yes19")}
@@ -1003,13 +1026,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes19"
+                      id="yes19"
+                      {...register("yes19")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes19 && (
+                {yes19 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -1076,7 +1102,7 @@ function WorkArea(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes20"
+                      value={true}
                       name="yes20"
                       id="yes20"
                       {...register("yes20")}
@@ -1084,13 +1110,16 @@ function WorkArea(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes20"
+                      id="yes20"
+                      {...register("yes20")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes14 && (
+                {yes20 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -1098,9 +1127,9 @@ function WorkArea(props) {
                     <br />
                     <Typography sx={{ mt: 2, mb: 3, fontSize: "14px" }}>
                       <strong>
-                        Use manual handling aids where ever possible. Reduce
-                        paint container size to under 10 litre in size where
-                        possible.
+                        All persons responsible for operation of access
+                        equipment are trained and competent to operate and use
+                        the equipment accordingly
                       </strong>
                     </Typography>
                     <Typography variant="p" sx={{ marginRight: "100px" }}>
@@ -1149,6 +1178,119 @@ function WorkArea(props) {
               control={<Radio />}
               label="Ladder Safety"
             />
+            {Ladder && (
+              <Box>
+                <Typography
+                  sx={{
+                    // marginRight: "40px",
+                    mt: 2,
+                    mb: 2,
+                    fontSize: "22px",
+                  }}
+                >
+                  Ladder Safety
+                </Typography>
+                <Divider
+                  sx={{
+                    mt: 2,
+                    mb: 2,
+                  }}
+                />
+                <FormControl>
+                  <Typography sx={{ mt: 1, fontSize: "14px" }} variant="p">
+                    <strong>
+                      Falls from Ladder -
+                      <span style={{ color: "red" }}>
+                        Is it a risk at this site?
+                      </span>
+                    </strong>
+                  </Typography>
+                  <RadioGroup
+                    sx={{ marginLeft: "70px", mt: 3, mb: 2 }}
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value={true}
+                      name="yes21"
+                      id="yes21"
+                      {...register("yes21")}
+                      control={<Radio />}
+                      label="Yes"
+                    />
+                    <FormControlLabel
+                      value={false}
+                      name="yes21"
+                      id="yes21"
+                      {...register("yes21")}
+                      control={<Radio />}
+                      {...register("yes21")}
+                      label="No"
+                    />
+                  </RadioGroup>
+                </FormControl>
+                {yes21 === "true" && (
+                  <Box>
+                    <Typography variant="p" sx={{ color: "blue" }}>
+                      How hazards will be controlled?
+                    </Typography>{" "}
+                    <br />
+                    <Typography sx={{ mt: 2, mb: 3, fontSize: "14px" }}>
+                      Load rating 120Kg min - industrial rating label attached
+                      and clearly visable. Correct size and length for task.
+                      Ladder in good operational order - (clean and dry) after
+                      visual inspection. Suitable securing options available -
+                      top and bottom and fitted with appropriate non slip foot
+                      moulding. Ability to secure 3 points of contact at all
+                      times
+                      <br></br>
+                      <strong>
+                        NOTE: do not attempt to move or extend ladder when
+                        working on the ladder, sliding down stiles or stepping
+                        up or down two or more rungs at a time.
+                      </strong>
+                    </Typography>
+                    <Typography
+                      variant="p"
+                      sx={{ marginRight: "120px", mt: 3 }}
+                    >
+                      Inherent Risk Rating
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                    <Typography
+                      variant="p"
+                      sx={{ marginRight: "120px", mt: 3 }}
+                    >
+                      Residual Risk Rating
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                  </Box>
+                )}
+              </Box>
+            )}
 
             <FormControlLabel
               value="Trestle"
@@ -1158,7 +1300,110 @@ function WorkArea(props) {
               control={<Radio />}
               label="Trestle Safety"
             />
-
+            {Trestle && (
+              <Box>
+                <Typography
+                  sx={{
+                    // marginRight: "40px",
+                    mt: 2,
+                    mb: 2,
+                    fontSize: "22px",
+                  }}
+                >
+                  Trestle Safety
+                </Typography>
+                <Divider
+                  sx={{
+                    mt: 2,
+                    mb: 2,
+                  }}
+                />
+                <FormControl>
+                  <Typography sx={{ mt: 1, fontSize: "14px" }} variant="p">
+                    <strong>
+                      Falls from access equipment - e.g. Trestle/Scaffold -
+                      <span style={{ color: "red" }}>
+                        Is it a risk at this site?
+                      </span>
+                    </strong>
+                  </Typography>
+                  <RadioGroup
+                    sx={{ marginLeft: "70px", mt: 3, mb: 2 }}
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value={true}
+                      name="yes22"
+                      id="yes22"
+                      {...register("yes22")}
+                      control={<Radio />}
+                      label="Yes"
+                    />
+                    <FormControlLabel
+                      value={false}
+                      name="yes22"
+                      id="yes22"
+                      control={<Radio />}
+                      {...register("yes22")}
+                      label="No"
+                    />
+                  </RadioGroup>
+                </FormControl>
+                {yes22 === "true" && (
+                  <Box>
+                    <Typography variant="p" sx={{ color: "blue" }}>
+                      How hazards will be controlled?
+                    </Typography>{" "}
+                    <br />
+                    <Typography sx={{ mt: 2, mb: 3, fontSize: "14px" }}>
+                      Rated for the proposed weight and span. Overhang of at
+                      least 150mm and nor more than 250mm at each end and be
+                      locked together e.g. claimed near centre span to prevent
+                      movement. Unobstructed surface width of at least 450mm
+                      (two planks wide
+                    </Typography>
+                    <Typography
+                      variant="p"
+                      sx={{ marginRight: "120px", mt: 3 }}
+                    >
+                      Inherent Risk Rating
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                    <Typography
+                      variant="p"
+                      sx={{ marginRight: "120px", mt: 3 }}
+                    >
+                      Residual Risk Rating
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                  </Box>
+                )}
+              </Box>
+            )}
             <FormControlLabel
               value="EWP"
               name="EWP"
@@ -1167,6 +1412,111 @@ function WorkArea(props) {
               control={<Radio />}
               label="EWP"
             />
+            {EWP && (
+              <Box>
+                <Typography
+                  sx={{
+                    // marginRight: "40px",
+                    mt: 2,
+                    mb: 2,
+                    fontSize: "22px",
+                  }}
+                >
+                  EWP / Powered Access Equipment
+                </Typography>
+                <Divider
+                  sx={{
+                    mt: 2,
+                    mb: 2,
+                  }}
+                />
+                <FormControl>
+                  <Typography sx={{ mt: 1, fontSize: "14px" }} variant="p">
+                    <strong>
+                      Falls from access equipment - e.g. Scissor / Boom lift -
+                      equipment suitable for nominated scope of work.
+                      <span style={{ color: "red" }}>
+                        Is it a risk at this site?
+                      </span>
+                    </strong>
+                  </Typography>
+                  <RadioGroup
+                    sx={{ marginLeft: "70px", mt: 3, mb: 2 }}
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value={true}
+                      name="yes23"
+                      id="yes23"
+                      {...register("yes23")}
+                      control={<Radio />}
+                      label="Yes"
+                    />
+                    <FormControlLabel
+                      value={false}
+                      name="yes23"
+                      id="yes23"
+                      {...register("yes23")}
+                      control={<Radio />}
+                      label="No"
+                    />
+                  </RadioGroup>
+                </FormControl>
+                {yes23 === "true" && (
+                  <Box>
+                    <Typography variant="p" sx={{ color: "blue" }}>
+                      How hazards will be controlled?
+                    </Typography>{" "}
+                    <br />
+                    <Typography sx={{ mt: 2, mb: 3, fontSize: "14px" }}>
+                      Ensure pre-use check list is completed. Ensure ground is
+                      level and sound. Do not lean out of scissor lift / boom
+                      lift or stand on handrails. Move equipment to enable safe
+                      access. Do not climb outside boom lift. Ensure minimal
+                      tools, paint etc in boom lift
+                    </Typography>
+                    <Typography
+                      variant="p"
+                      sx={{ marginRight: "120px", mt: 3 }}
+                    >
+                      Inherent Risk Rating
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                    <Typography
+                      variant="p"
+                      sx={{ marginRight: "120px", mt: 3 }}
+                    >
+                      Residual Risk Rating
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                  </Box>
+                )}
+              </Box>
+            )}
           </RadioGroup>
         </FormControl>
       </CardContent>

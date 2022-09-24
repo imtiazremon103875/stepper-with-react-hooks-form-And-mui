@@ -102,7 +102,7 @@ function Equipment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes5"
+                      value={true}
                       name="yes5"
                       id="yes5"
                       {...register("yes5")}
@@ -110,13 +110,16 @@ function Equipment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes5"
+                      id="yes5"
+                      {...register("yes5")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes5 && (
+                {yes5 === "true" && (
                   <Box>
                     <Typography variant="p">
                       Inherent Risks - Unsecured hazardous material container in
@@ -180,7 +183,7 @@ function Equipment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes6"
+                      value={true}
                       name="yes6"
                       id="yes6"
                       {...register("yes6")}
@@ -188,13 +191,16 @@ function Equipment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes6"
+                      id="yes6"
+                      {...register("yes6")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes6 && (
+                {yes6 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How will the hazards controlled?
@@ -293,7 +299,7 @@ function Equipment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes7"
+                      value={true}
                       name="yes7"
                       id="yes7"
                       {...register("yes7")}
@@ -301,16 +307,16 @@ function Equipment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes7"
+                      id="yes7"
+                      {...register("yes7")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes7 && (
+                {yes7 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How will the hazards and risks be controlled?
@@ -409,7 +415,7 @@ function Equipment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes8"
+                      value={true}
                       name="yes8"
                       id="yes8"
                       {...register("yes8")}
@@ -417,13 +423,16 @@ function Equipment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
-                      control={<Radio />}
+                      value={false}
+                      name="yes8"
+                      id="yes8"
                       label="No"
+                      {...register("yes8")}
+                      control={<Radio />}
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes8 && (
+                {yes8 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How will the hazards and risks be controlled?
@@ -488,7 +497,7 @@ function Equipment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes9"
+                      value={true}
                       name="yes9"
                       id="yes9"
                       {...register("yes9")}
@@ -496,13 +505,16 @@ function Equipment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="male"
+                      value={false}
+                      name="yes9"
+                      id="yes9"
+                      {...register("yes9")}
                       control={<Radio />}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes9 && (
+                {yes9 == "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
