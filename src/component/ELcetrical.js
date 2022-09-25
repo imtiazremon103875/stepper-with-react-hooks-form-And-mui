@@ -135,7 +135,7 @@ function ELcetrical(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -153,7 +153,7 @@ function ELcetrical(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -247,7 +247,7 @@ function ELcetrical(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -265,7 +265,7 @@ function ELcetrical(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -361,7 +361,7 @@ function ELcetrical(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -379,7 +379,7 @@ function ELcetrical(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks

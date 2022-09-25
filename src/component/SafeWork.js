@@ -20,6 +20,7 @@ import Button from "@mui/material/Button";
 function SafeWork(props) {
   const { register, watch } = props;
   const clients = watch("clients");
+
   // const allValues = watch();
   // console.log({ allValues });
   const yes3 = watch("yes3");
@@ -68,7 +69,7 @@ function SafeWork(props) {
               <Box>
                 <Typography
                   sx={{
-                    marginRight: "300px",
+                    marginRight: "180px",
                     mt: 2,
                     mb: 2,
                     fontSize: "24px",
@@ -125,9 +126,13 @@ function SafeWork(props) {
                     </Typography>
                     <Box sx={{ width: 300 }}>
                       <Slider
-                        sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        sx={{
+                          marginLeft: "30px",
+                          mt: 3,
+                          mb: 1,
+                        }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -176,7 +181,7 @@ function SafeWork(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -258,7 +263,7 @@ function SafeWork(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
@@ -287,7 +292,7 @@ function SafeWork(props) {
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
                         aria-label="Temperature"
-                        defaultValue={30}
+                        defaultValue={0}
                         valueLabelDisplay="auto"
                         step={1}
                         marks

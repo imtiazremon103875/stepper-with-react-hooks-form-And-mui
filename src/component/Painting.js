@@ -58,11 +58,14 @@ function Painting(props) {
           id="fullWidth"
         />
         <TextField
+          {...register("Project manager")}
           sx={{ mb: 3, width: { lg: "700px" } }}
           label="Project Manager"
           id="fullWidth"
         />
         <TextField
+          required
+          {...register("Furlong Painting")}
           sx={{ mb: 3, width: { lg: "700px" } }}
           label="Furlong Painting - Project Number*"
           id="fullWidth"
