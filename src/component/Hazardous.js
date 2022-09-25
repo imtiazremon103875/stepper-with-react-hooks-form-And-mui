@@ -22,7 +22,8 @@ function Hazardous(props) {
   const { register, watch } = props;
   const Chemical = watch("Chemical");
 
-  const yes28 = watch("yes28");
+  const yes35 = watch("yes35");
+  const yes36 = watch("yes36");
 
   const bull = (
     <Box
@@ -59,14 +60,14 @@ function Hazardous(props) {
               <Box>
                 <Typography
                   sx={{
-                    // marginRight: "40px",
+                    // marginRight: "30px",
                     mt: 2,
                     mb: 2,
                     fontSize: "22px",
                   }}
                 >
                   {" "}
-                  Plant and Equipment
+                  Generic Painting Chemical Product
                 </Typography>
                 <Divider
                   sx={{
@@ -75,53 +76,54 @@ function Hazardous(props) {
                   }}
                 />
                 <FormControl>
-                  <Typography sx={{ mt: 1, fontSize: "14px" }} variant="p">
-                    <strong>
-                      Exposure to noise -
-                      <span style={{ color: "red" }}>
-                        Is it a risk at this site?
-                      </span>
-                    </strong>
-                  </Typography>
+                  <FormLabel
+                    sx={{ mt: 2 }}
+                    id="demo-row-radio-buttons-group-label"
+                  >
+                    Chemical exposure -
+                    <span style={{ color: "red" }}>
+                      Is it a risk at this site?
+                    </span>
+                  </FormLabel>
+
                   <RadioGroup
-                    sx={{ marginLeft: "70px", mt: 3, mb: 2 }}
+                    sx={{ marginLeft: "65px", mt: 3, mb: 3 }}
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes28"
-                      name="yes28"
-                      id="yes28"
-                      {...register("yes28")}
+                      value={true}
+                      name="yes35"
+                      id="yes35"
+                      {...register("yes35")}
                       control={<Radio />}
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes35"
+                      id="yes35"
+                      {...register("yes35")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes28 && (
+                {yes35 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
-                    </Typography>{" "}
-                    <br />
-                    <Typography sx={{ mt: 2, mb: 3, fontSize: "14px" }}>
-                      Use of hearing protection when operating noisy plant and
-                      equipment - inline with manufacturers recommendations .
                     </Typography>
-                    <Typography
-                      variant="p"
-                      sx={{ marginRight: "120px", mt: 3 }}
-                    >
-                      Inherent Risk Rating
+                    <Typography sx={{ mt: 2, mb: 3, fontSize: "14px" }}>
+                      {" "}
+                      Ensure current and valid SDS available for all
+                      dangerous/hazardous goods used. Ensure all PPE nominated
+                      in the SDS is readily available for use the work area and
+                      all air filters are in suitable condition
+                    </Typography>
+                    <Typography variant="p" sx={{ marginRight: "120px" }}>
+                      <strong> Inherent Risk Rating</strong>
                     </Typography>
                     <Box sx={{ width: 300 }}>
                       <Slider
@@ -135,15 +137,95 @@ function Hazardous(props) {
                         max={4}
                       />
                     </Box>
-                    <Typography
-                      variant="p"
-                      sx={{ marginRight: "120px", mt: 3 }}
-                    >
-                      Residual Risk Rating
+
+                    <Typography variant="p" sx={{ marginRight: "160px" }}>
+                      <strong> Residual Risk</strong>
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{
+                          marginLeft: "30px",
+                          mt: 3,
+                          mb: 1,
+                        }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                  </Box>
+                )}
+                <FormControl>
+                  <Typography sx={{ mt: 1 }} variant="p">
+                    Contaminated Waste -
+                    <span style={{ color: "red" }}>
+                      Is it a risk at this site?
+                    </span>
+                  </Typography>
+                  <RadioGroup
+                    sx={{ marginLeft: "67px", mt: 3, mb: 3 }}
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value={true}
+                      name="yes36"
+                      id="yes36"
+                      {...register("yes36")}
+                      control={<Radio />}
+                      label="Yes"
+                    />
+                    <FormControlLabel
+                      value={false}
+                      name="yes36"
+                      id="yes36"
+                      {...register("yes36")}
+                      control={<Radio />}
+                      label="No"
+                    />
+                  </RadioGroup>
+                </FormControl>
+                {yes36 === "true" && (
+                  <Box>
+                    <Typography variant="p" sx={{ color: "blue" }}>
+                      How will the hazards controlled?
+                    </Typography>{" "}
+                    <br />
+                    <Typography sx={{ mt: 2, mb: 3, fontSize: "14px" }}>
+                      Dispose of all contaminated wastes, using correct
+                      procedures. Return unwanted paint to the office for
+                      recycling or disposal
+                    </Typography>
+                    <Typography variant="p" sx={{ marginRight: "100px" }}>
+                      <strong> Inherent Risk Rating</strong>
                     </Typography>
                     <Box sx={{ width: 300 }}>
                       <Slider
                         sx={{ marginLeft: "30px", mt: 3, mb: 1 }}
+                        aria-label="Temperature"
+                        defaultValue={30}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={0}
+                        max={4}
+                      />
+                    </Box>
+                    <Typography variant="p" sx={{ marginRight: "140px" }}>
+                      <strong> Residual Risk</strong>
+                    </Typography>
+                    <Box sx={{ width: 300 }}>
+                      <Slider
+                        sx={{
+                          marginLeft: "30px",
+                          mt: 3,
+                          mb: 1,
+                        }}
                         aria-label="Temperature"
                         defaultValue={30}
                         valueLabelDisplay="auto"

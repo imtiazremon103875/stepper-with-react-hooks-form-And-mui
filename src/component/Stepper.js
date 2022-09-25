@@ -18,8 +18,9 @@ import Hazardous from "./Hazardous";
 import Completion from "./Completion";
 import { useForm } from "react-hook-form";
 import Environment from "./Environment";
+import Signature from "./Signature";
 
-const steps = ["", "", "", "", "", "", "", "", "", "", ""];
+const steps = ["", "", "", "", "", "", "", "", "", "", "", ""];
 
 export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -48,7 +49,9 @@ export default function HorizontalNonLinearStepper() {
       case 9:
         return <Hazardous register={register} watch={watch}></Hazardous>;
       case 10:
-        return <Completion activeStep={activeStep}></Completion>;
+        return <Completion register={register} watch={watch}></Completion>;
+      case 11:
+        return <Signature register={register}></Signature>;
       default:
         return "unknown stage";
     }
@@ -95,10 +98,6 @@ export default function HorizontalNonLinearStepper() {
     handleNext();
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-    setCompleted({});
-  };
   const {
     register,
     handleSubmit,
@@ -122,15 +121,9 @@ export default function HorizontalNonLinearStepper() {
         <div>
           {allStepsCompleted() ? (
             <React.Fragment>
-              <Typography sx={{ mt: 2, mb: 1 }}>
-                All steps completed - you&apos;re finished
+              <Typography sx={{ mt: 2, mb: 1, fontSize: "40px" }}>
+                Thank You
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-                <Box sx={{ flex: "1 1 auto" }} />
-                <Button variant="contained" onClick={handleReset}>
-                  Reset
-                </Button>
-              </Box>
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -138,7 +131,9 @@ export default function HorizontalNonLinearStepper() {
               {/* Step {activeStep + 1} */}
               {getStepContent(activeStep, register, watch, activeStep)}
               {/* </Typography> */}
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Box
+                sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}
+              >
                 <Button
                   variant="contained"
                   // color="inherit"
@@ -148,7 +143,17 @@ export default function HorizontalNonLinearStepper() {
                 >
                   Back
                 </Button>
-                <Box sx={{ flex: "1 1 auto" }} />
+                <Button
+                  // className={classes.button}
+                  variant="contained"
+                  color="primary"
+                  // onClick={handleNext}
+                  onClick={handleComplete}
+                  type="submit"
+                >
+                  {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                </Button>
+                {/* <Box sx={{ flex: "1 1 auto" }} />
                 <Button variant="contained" onClick={handleNext} sx={{ mr: 1 }}>
                   Next
                 </Button>
@@ -166,18 +171,18 @@ export default function HorizontalNonLinearStepper() {
                         ? "Finish"
                         : "Complete Step"}
                     </Button>
-                  ))}
+                  ))} */}
               </Box>
             </React.Fragment>
           )}
         </div>
-        {activeStep == 10 ? (
+        {/* {activeStep == 11 ? (
           <Button type="submit" variant="contained">
             Finish
           </Button>
         ) : (
           ""
-        )}
+        )} */}
       </form>
     </Box>
   );

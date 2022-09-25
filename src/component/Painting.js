@@ -98,6 +98,7 @@ function Painting(props) {
               <td>Name</td>
               <td>
                 <TextField
+                  {...register("name1")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -105,6 +106,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("name2")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -112,6 +114,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("name3")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -119,6 +122,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("name4")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -129,6 +133,7 @@ function Painting(props) {
               <td>Initial</td>
               <td>
                 <TextField
+                  {...register("initial1")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -136,6 +141,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("initial2")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -143,6 +149,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("initial3")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -150,6 +157,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("initial4")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -160,6 +168,7 @@ function Painting(props) {
               <td>Date</td>
               <td>
                 <TextField
+                  {...register("date1")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -167,6 +176,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("date2")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -174,6 +184,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("date3")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"
@@ -181,6 +192,7 @@ function Painting(props) {
               </td>
               <td>
                 <TextField
+                  {...register("date4")}
                   sx={{ mb: 1, width: { lg: "150px" } }}
                   id="outlined-basic"
                   variant="outlined"

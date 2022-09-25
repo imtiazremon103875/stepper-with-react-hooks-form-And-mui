@@ -93,7 +93,7 @@ function Environment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes32"
+                      value={true}
                       name="yes32"
                       id="yes32"
                       {...register("yes32")}
@@ -101,16 +101,16 @@ function Environment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes32"
+                      id="yes32"
+                      {...register("yes32")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes32 && (
+                {yes32 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -205,7 +205,7 @@ function Environment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes33"
+                      value={true}
                       name="yes33"
                       id="yes33"
                       {...register("yes33")}
@@ -213,16 +213,16 @@ function Environment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
+                      name="yes33"
+                      id="yes33"
+                      {...register("yes33")}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes33 && (
+                {yes33 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
@@ -317,7 +317,7 @@ function Environment(props) {
                     name="row-radio-buttons-group"
                   >
                     <FormControlLabel
-                      value="yes34"
+                      value={true}
                       name="yes34"
                       id="yes34"
                       {...register("yes34")}
@@ -325,16 +325,16 @@ function Environment(props) {
                       label="Yes"
                     />
                     <FormControlLabel
-                      value="no"
+                      value={false}
                       control={<Radio />}
-                      name="no"
-                      id="no"
-                      {...register("no")}
+                      name="yes34"
+                      id="yes34"
+                      {...register("yes34")}
                       label="No"
                     />
                   </RadioGroup>
                 </FormControl>
-                {yes34 && (
+                {yes34 === "true" && (
                   <Box>
                     <Typography variant="p" sx={{ color: "blue" }}>
                       How hazards will be controlled?
